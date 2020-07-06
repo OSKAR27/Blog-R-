@@ -1,0 +1,18 @@
+default:
+    autoload:
+        - '%paths.base@/test/BlogIntegration'
+
+    suites:
+       default:
+            email:
+                paths:
+                    - '%paths.base@/test/BlogIntegration/Domain/Email/Feature'
+                contexts:
+                    - BlogIntegration\Domain\Email\Context\EmailContext
+            fizzbuzz:
+                paths:
+                    - '%paths.base%/test/BlogIntegration/FizzBuzz/Solver/Feature'
+                contexts:
+                    - BlogIntegration\FizzBuzz\Solver\Context\FizzBuzzSolverContext
+            formatters:
+                pretty: true
