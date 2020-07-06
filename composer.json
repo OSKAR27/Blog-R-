@@ -24,8 +24,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "BlogUnit\\": "test/BlogUnit",
-            "BlogIntegration\\": "test/BlogIntegration"
+            "BlogUnit\\": "test/"
         }
     }
 }

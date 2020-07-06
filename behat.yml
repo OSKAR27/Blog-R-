@@ -9,10 +9,10 @@ default:
                     - '%paths.base@/test/BlogIntegration/Domain/Email/Feature'
                 contexts:
                     - BlogIntegration\Domain\Email\Context\EmailContext
-            fizzbuzz:
+             password:
                 paths:
-                    - '%paths.base%/test/BlogIntegration/FizzBuzz/Solver/Feature'
+                    - '%paths.base@/test/BlogIntegration/Domain/Password/Feature'
                 contexts:
-                    - BlogIntegration\FizzBuzz\Solver\Context\FizzBuzzSolverContext
+                    - BlogIntegration\Domain\Password\Context\PasswordContext
             formatters:
                 pretty: true

@@ -10,12 +10,12 @@ class Password
         $this->password = $password;
     }
 
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->password;
     }
 
-    public function checkMaxLimit()
+    public function checkMaxLimit(): bool
     {
         if(strlen($this->password)<28)
         {
@@ -25,7 +25,7 @@ class Password
         return false;
     }
 
-    public function checkMinLimit()
+    public function checkMinLimit(): bool
     {
         if(strlen($this->password)>1)
         {
@@ -35,7 +35,7 @@ class Password
         return false;
     }
 
-    public function containsCharacter()
+    public function containsCharacter(): bool
     {
         if(strpos($this->password, 'a'))
         {
@@ -45,7 +45,7 @@ class Password
         return false;
     }
 
-    public function containNumber()
+    public function containNumber(): bool
     {
         if(!filter_var($this->password, FILTER_VALIDATE_INT))
         {

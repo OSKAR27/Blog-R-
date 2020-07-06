@@ -1,11 +1,11 @@
 <?php
 namespace BlogUnit;
+
 use Blog\Domain\Password\Password;
 
 class PasswordTest extends \PHPUnit_Framework_TestCase 
 {
     protected $password;
-
 
     protected function setUp()
     {
@@ -40,8 +40,15 @@ class PasswordTest extends \PHPUnit_Framework_TestCase
     public function shouldNotContainsCharacterString()
     {
         $this->password = new Password("123456789");
-        $this->assertTrue($this->password->containsCharacter());
+        $this->assertFalse($this->password->containsCharacter());
     }
+
+     /** @test */
+     public function passwordInvalidCharacterWhitOutString()
+     {
+         $this->password = new Password("123456789#$");
+         $this->assertFalse($this->password->containsCharacter());
+     }
  
     /** @test */
     public function shouldInvalidExceedLimitCharacterString()
@@ -61,7 +68,7 @@ class PasswordTest extends \PHPUnit_Framework_TestCase
     public function shouldInvalidMinLimitCharacterString()
     {
         $this->password = new Password("12");
-        $this->assertFalse($this->password->checkMinLimit());
+        $this->assertTrue($this->password->checkMinLimit());
     }
 
     /** @test */
